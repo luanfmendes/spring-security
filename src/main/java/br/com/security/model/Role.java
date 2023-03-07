@@ -4,21 +4,26 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @Entity
-@Table(name = "products")
+@Table(name = "roles")
 @Data
-public class Product {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Role {
 
     @Id
     @GeneratedValue
     private UUID id;
     private String name;
-    private String description;
 
-    private String sku;
+    public Role(UUID id){
+        this.id = id;
+    }
 
 }
